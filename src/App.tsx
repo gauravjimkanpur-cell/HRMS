@@ -11,6 +11,7 @@ const App: React.FC = () => {
   return (
     <Layout>
       <Routes>
+        
         <Route path="/" element={<Dashboard />} />
         <Route path="/projects/*" element={<Projects />} />
         <Route path="/reports/*" element={<Reports />} />
