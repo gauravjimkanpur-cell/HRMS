@@ -11,7 +11,7 @@ import {
   BarElement,
   Tooltip,
   Legend,
-} from "chart.js";
+} from "chart.js";  
 
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, BarController, BarElement, Tooltip, Legend);
 
@@ -66,7 +66,7 @@ const Dashboard: React.FC = () => {
           scales: { y: { beginAtZero: true } },
         },
       });
-    }
+    }    
 
     return () => {
       lineChart?.destroy();

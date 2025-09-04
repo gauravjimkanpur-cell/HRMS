@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/7039323.jpg"; // Your HRMS background image
+import logo from "../assets/7039323.jpg"; 
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -23,6 +23,8 @@ const Login: React.FC = () => {
       setError("Invalid email or password.");
     }
   };
+         
+
 
   return (
     <div
@@ -44,7 +46,7 @@ const Login: React.FC = () => {
           width: "400px",
           borderRadius: "20px",
           background: "rgba(255, 255, 255, 0.85)",
-          backdropFilter: "blur(8px)", // glassmorphism effect
+          backdropFilter: "blur(8px)", 
           textAlign: "center",
         }}
       >

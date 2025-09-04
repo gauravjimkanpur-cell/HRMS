@@ -61,7 +61,7 @@ const Layout: React.FC = () => {
           }}
         >
           <div>
-            <h2>HRMS</h2>
+            <h2></h2>
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
