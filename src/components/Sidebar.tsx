@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 interface SidebarProps {
   collapsed: boolean;
@@ -15,14 +15,17 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
 
   return (
     <nav className={`sidebar ${collapsed ? "closed" : ""}`}>
-      <button className="toggle-btn" onClick={toggleSidebar}>
+      <div className=" toggle-btn2" >
+      <button  className="toggle-btn" onClick={toggleSidebar}>
         ☰
       </button>
+       <h2 style={{ margin:"10px 20px"}}>HRMS</h2>
+       </div>
       <ul>
         <li>
           <div className="menu-item">
             <span className="icon">🏠</span>
-            <Link to="/" className="text">Dashboard</Link>
+            <NavLink to="/" className="text">Dashboard</NavLink>
           </div>
         </li>
 
@@ -37,9 +40,9 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
             {!collapsed && <span className={`arrow ${openMenu === "projects" ? "rotate" : ""}`}>▶</span>}
           </div>
           <ul className={`submenu ${openMenu === "projects" ? "open" : ""}`}>
-            <li><Link to="/projects/active">Active</Link></li>
-            <li><Link to="/projects/archived">Archived</Link></li>
-            <li><Link to="/projects/new">Create New</Link></li>
+            <li><NavLink to="/projects/active">Active</NavLink></li>
+            <li><NavLink to="/projects/archived">Archived</NavLink></li>
+            <li><NavLink to="/projects/new">Create New</NavLink></li>
           </ul>
         </li>
 
@@ -54,8 +57,8 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
             {!collapsed && <span className={`arrow ${openMenu === "reports" ? "rotate" : ""}`}>▶</span>}
           </div>
           <ul className={`submenu ${openMenu === "reports" ? "open" : ""}`}>
-            <li><Link to="/reports/monthly">Monthly</Link></li>
-            <li><Link to="/reports/yearly">Yearly</Link></li>
+            <li><NavLink to="/reports/monthly">Monthly</NavLink></li>
+            <li><NavLink to="/reports/yearly">Yearly</NavLink></li>
           </ul>
         </li>
 
@@ -70,8 +73,8 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
             {!collapsed && <span className={`arrow ${openMenu === "settings" ? "rotate" : ""}`}>▶</span>}
           </div>
           <ul className={`submenu ${openMenu === "settings" ? "open" : ""}`}>
-            <li><Link to="/settings/profile">Profile</Link></li>
-            <li><Link to="/settings/security">Security</Link></li>
+            <li><NavLink to="/settings/profile">Profile</NavLink></li>
+            <li><NavLink to="/settings/security">Security</NavLink></li>
           </ul>
         </li>
 
@@ -79,10 +82,10 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
         <li>
           <div className="menu-item">
             <span className="icon">❓</span>
-            <Link to="/help" className="text">Help</Link>
+            <NavLink to="/help" className="text">Help</NavLink>
           </div>
         </li>
-      </ul>
+      </ul> 
     </nav>
   );
 };

@@ -29,26 +29,40 @@ body { font-family: 'Segoe UI', sans-serif; background-color: #f5f5f5; }
   border-bottom: 1px solid #eee;
 }
 
+
+.sidebar .toggle-btn2 {
+  display: flex;
+   border-bottom: 1px solid #eee;
+   justify-content: space-between;
+}
 .sidebar ul {
-  list-style: none;
+  list-style: none ; 
 }
 
 .sidebar li {
   border-bottom: 1px solid #f0f0f0;
 }
 
+ol, ul {
+     padding-left: 0; 
+}
 .sidebar .menu-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
-  cursor: pointer;
+  padding: 10px 20px ;
+  cursor: pointer; 
+  text-decoration: none;
 }
 
 .sidebar .menu-item:hover {
   background-color: #f3f3f3;
 }
 
+a{
+  text-decoration: none;
+      color:black ;
+}
 .icon {
   margin-right: 10px;
   width: 20px;
@@ -76,9 +90,10 @@ body { font-family: 'Segoe UI', sans-serif; background-color: #f5f5f5; }
 }
 
 .submenu li {
-  padding: 12px 40px;
+  padding: 12px 40px ;
   font-size: 14px;
 }
+
 
 .submenu li:hover {
   background-color: #eee;
@@ -138,4 +153,59 @@ footer {
   flex: 1;
   padding: 20px;
   background: #f9f9f9;
+}
+
+
+.layout {
+  display: flex;
+  height: 100vh; /* full viewport */
+  overflow: hidden; /* prevent whole page scrolling */
+}
+
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  transition: width 0.3s;
+  overflow-y: auto; /* sidebar scroll if menu too long */
+}
+
+.sidebar.closed {
+  width: 60px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.content {
+  flex: 1; /* take remaining height */
+  overflow-y: auto; /* content scrolls */
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+footer {
+  height: 50px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  line-height: 25px;
+  color: #666;
+  flex-shrink: 0;
+ 
 }
